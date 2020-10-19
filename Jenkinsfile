@@ -1,7 +1,5 @@
 pipeline{
-  agent{
-    docker { image 'ansible/centos7-ansible'}
-  }
+	agent { dockerfile true }
   stages{
     stage('test'){
       steps{
