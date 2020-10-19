@@ -4,7 +4,6 @@ pipeline{
     stage('System test'){
       steps{
         sh 'cat /etc/*release'
-	sh 'whoami'
       }
     }
 	stage('Check version'){
