@@ -4,22 +4,22 @@ pipeline{
   }
   stages{
     stage('test'){
-      step{
+      steps{
         sh 'cat /etc/*release'
       }
     }
 	stage('Install Ansible'){
-      step{
+      steps{
         sh 'yum install ansible'
       }
     }
 	stage('Check version'){
-      step{
+      steps{
         sh 'ansible --version'
       }
     }
 	stage('play playbok'){
-      step{
+      steps{
         sh 'ansible localhost -m shell -a "cat /etc/*release"'
       }
     }
