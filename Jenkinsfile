@@ -1,16 +1,11 @@
 pipeline{
   agent{
-    docker { image 'centos:centos8'}
+    docker { image 'ansible/centos7-ansible'}
   }
   stages{
     stage('test'){
       steps{
         sh 'cat /etc/*release'
-      }
-    }
-	stage('Install Ansible'){
-      steps{
-        sh 'yum install ansible'
       }
     }
 	stage('Check version'){
